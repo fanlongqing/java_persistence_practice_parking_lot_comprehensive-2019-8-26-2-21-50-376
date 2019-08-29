@@ -6,5 +6,7 @@ CREATE TABLE parkingBoy (
 
 CREATE TABLE parkingLot (
  parkingLotID varchar(36) PRIMARY KEY,
-  capacity   int(4) NOT NULL
+  capacity   int(11) NOT NULL,
+  parkingBoyId varchar(36),
+  FOREIGN KEY(parkingBoyId) REFERENCES parkingBoy(id)
 );

@@ -10,4 +10,5 @@ import java.util.List;
 public interface ParkingLotMapper {
     List<ParkingLot> getParkingLot();
     void insert(@Param("parkingLot") ParkingLot parkingLot);
+
 }
