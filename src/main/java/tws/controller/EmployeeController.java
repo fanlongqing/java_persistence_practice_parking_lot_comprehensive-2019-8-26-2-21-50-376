@@ -8,26 +8,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tws.entity.Employee;
+import tws.entity.ParkingBoy;
 import tws.repository.EmployeeMapper;
+import tws.repository.ParkingBoyMapper;
 
 import java.net.URI;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/parkingBoy")
 public class EmployeeController {
 
     @Autowired
-    private EmployeeMapper employeeMapper;
+    private ParkingBoyMapper parkingBoyMapper;
 
     @GetMapping("")
-    public ResponseEntity<List<Employee>> getAll() {
-        return ResponseEntity.ok(employeeMapper.selectAll());
+    public ResponseEntity<List<ParkingBoy>> getParkingBoyAll() {
+
+        return ResponseEntity.ok(parkingBoyMapper.getParkingBoy());
     }
 
     @PostMapping("")
-    public ResponseEntity<Employee> insert(@RequestBody Employee employee) {
-        employeeMapper.insert(employee);
-        return ResponseEntity.created(URI.create("/employees/" + employee.getId())).body(employee);
+    public ResponseEntity<Employee> insert(@RequestBody ParkingBoy parkingBoy) {
+
+       // return ResponseEntity.created(URI.create("/employees/" + parkingBoy.getEmployeeID())).body(parkingBoy);
+        String id= UUID.randomUUID().toString();
+        parkingBoy.setEmployeeID(id);
+        parkingBoyMapper.insert(parkingBoy);
+        return ResponseEntity.created(URI.create("/parkingBoy/"+id)).build();
     }
+
 }
