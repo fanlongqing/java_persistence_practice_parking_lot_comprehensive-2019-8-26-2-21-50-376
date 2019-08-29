@@ -18,7 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/parkingBoy")
-public class EmployeeController {
+public class ParkingBoyController {
 
     @Autowired
     private ParkingBoyMapper parkingBoyMapper;
