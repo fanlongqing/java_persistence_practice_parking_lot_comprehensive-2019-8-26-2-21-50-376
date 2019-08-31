@@ -8,5 +8,5 @@ CREATE TABLE parkingLot (
   capacity   int(11) NOT NULL,
   parkingBoyId varchar(36),
   availablePositionCount int(11) NOT NULL
-  FOREIGN KEY(parkingBoyId) REFERENCES parkingBoy(id)
+--  FOREIGN KEY(parkingBoyId) REFERENCES parkingBoy(id)
 );

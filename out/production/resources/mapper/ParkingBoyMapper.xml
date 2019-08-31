@@ -16,4 +16,12 @@
     <delete id="delete" parameterType="tws.entity.ParkingBoy">
        delete from `parkingBoy` where id=#{id}
     </delete>
+
+    <update id="manageLot">
+      update parkinglot set parkingBoyId=#{parkingBoyId} where parkingLotID = #{parkingLotId};
+    </update>
+    <select id="selectOneParkingBoyAllParkingLots" resultType="tws.entity.ParkingLot">
+        select * from `parkinglot` where parkingBoyId=#{id};
+    </select>
+
 </mapper>
