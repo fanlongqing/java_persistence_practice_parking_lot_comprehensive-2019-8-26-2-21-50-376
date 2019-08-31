@@ -3,7 +3,7 @@ package tws.entity;
 public class ParkingBoy{
     private  String employeeID;
     private String name;
-    private String age;
+    private int age;
 
     public String getName() {
         return name;
@@ -13,11 +13,11 @@ public class ParkingBoy{
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -32,7 +32,7 @@ public class ParkingBoy{
     public ParkingBoy() {
     }
 
-    public ParkingBoy(String employeeID, String name, String age) {
+    public ParkingBoy(String employeeID, String name, int age) {
         this.employeeID = employeeID;
         this.name = name;
         this.age = age;

@@ -7,7 +7,7 @@
 
 
     <insert id="insert" parameterType="tws.entity.ParkingLot">
-       insert into `parkingLot`(`parkingLotID`,`capacity`)values (#{parkingLot.parkingLotID},#{parkingLot.capacity});
+       insert into `parkingLot`(`parkingLotID`,`capacity`,`availablePositionCount`)values (#{parkingLot.parkingLotID},#{parkingLot.capacity},#{parkingLot.availablePositionCount});
     </insert>
 
 

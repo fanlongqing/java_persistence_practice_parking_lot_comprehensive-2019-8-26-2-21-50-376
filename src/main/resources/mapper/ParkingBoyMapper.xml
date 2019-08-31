@@ -7,4 +7,21 @@
     <insert id="insert" parameterType="tws.entity.ParkingBoy">
        insert into `parkingBoy` (`id`,`name`,`age`)values (#{parkingBoy.employeeID},#{parkingBoy.name},#{parkingBoy.age});
     </insert>
+
+    <update id="update" parameterType="tws.entity.ParkingBoy">
+       update  `parkingBoy`
+        set <if test="parkingBoy.name !=null">`name`=#{parkingBoy.name},</if> <if test="parkingBoy.age!=null">`age`=#{parkingBoy.age}</if> where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="tws.entity.ParkingBoy">
+       delete from `parkingBoy` where id=#{id}
+    </delete>
+
+    <update id="manageLot">
+      update parkinglot set parkingBoyId=#{parkingBoyId} where parkingLotID = #{parkingLotId};
+    </update>
+    <select id="selectOneParkingBoyAllParkingLots" resultType="tws.entity.ParkingLot">
+        select * from `parkinglot` where parkingBoyId=#{id};
+    </select>
+
 </mapper>

@@ -1,0 +1,47 @@
+//story1:AC1
+Method:POST
+URL:/parkingBoy
+request body:{"id":23,"name":"小徐","age":18}
+response body:{"/parking-boys/23"}
+response code:201,500
+
+//story1:AC2
+Method:GET
+URL:/parkingBoy
+request body:{}
+response body:[{"id":23,"name":"小徐","age":18}]
+response code:200,500
+
+
+Method:GET
+URL:/parking-boys/parking-boys-dto
+request body:{}
+response body:[{"employeeID":12,"parkingBoyName":"迷失的娜娜","age":18,"parkingLots":[{"parkingLotID":1,"capacity":2,"availablePositionCount":1,"employeeID":12},{"parkingLotID":2,"capacity":3,"availablePositionCount":1,"employeeID":12}]},{"employeeID":13,"parkingBoyName":"迷失的洋洋","age":18"parkingLots":[]}]
+response code:200,500
+
+//story2:AC1
+Method:POST
+URL:/parkingLot
+request body:{"parkingLotID":2,"capacity":3,"availablePositionCount":1,"parkingBoyId":23}
+response body:{"/parkingLot/2"}
+response code:201,500
+//story2:AC2
+Method:GET
+URL:/parkingLot
+request body:{}
+response body:[{"parkingLotID":2,"capacity":3,"availablePositionCount":1,"parkingBoyId":23},{"parkingLotID":2,"capacity":3,"availablePositionCount":1,"parkingBoyId":45}]
+response code:200,500
+
+// Story3: AC2
+POST：/parkingboys/23/2
+RequestBoy:
+[
+	{
+	 "id": 1,
+	 "capacity": 5,
+	 "availablePositionCount": 3,
+	 "parkingBoysId": 1
+	}
+]
+ResponseBody:
+ResponseCode: 200
